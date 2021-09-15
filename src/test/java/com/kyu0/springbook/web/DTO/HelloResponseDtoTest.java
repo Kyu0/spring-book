@@ -1,4 +1,4 @@
-package com.kyu0.springbook.springboot.web.DTO;
+package com.kyu0.springbook.web.DTO;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
