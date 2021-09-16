@@ -18,6 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
     implementation 'org.projectlombok:lombok'
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
 }
 

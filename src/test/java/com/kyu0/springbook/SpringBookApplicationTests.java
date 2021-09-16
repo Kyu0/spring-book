@@ -20,7 +20,8 @@ import com.kyu0.springbook.web.HelloController;
 public class SpringBookApplicationTests {
 
     @Autowired
-    private MockMvc mvc;
+    private MockMvc mvc;    //Controller와 ControllerAdvice 등 외부 활동과 관련된 부분만 활성화 된다.
+                            //JPA 작동 X
 
     @Test
     public void returns_hello() throws Exception {

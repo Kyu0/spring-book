@@ -1,6 +1,6 @@
 package com.kyu0.springbook.web;
 
-import com.kyu0.springbook.web.DTO.HelloResponseDto;
+import com.kyu0.springbook.web.dto.HelloResponseDto;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
