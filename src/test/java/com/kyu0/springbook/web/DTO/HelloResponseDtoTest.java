@@ -3,8 +3,6 @@ package com.kyu0.springbook.web.dto;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.kyu0.springbook.web.dto.HelloResponseDto;
-
 public class HelloResponseDtoTest {
 
     @Test
