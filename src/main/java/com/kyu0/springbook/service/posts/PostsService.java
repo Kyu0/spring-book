@@ -4,6 +4,11 @@ import com.kyu0.springbook.domain.posts.PostsRepository;
 import com.kyu0.springbook.web.dto.PostsResponseDto;
 import com.kyu0.springbook.web.dto.PostsSaveRequestDto;
 import com.kyu0.springbook.web.dto.PostsUpdateRequestDto;
+import com.kyu0.springbook.web.dto.PostsListResponseDto;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.kyu0.springbook.domain.posts.Posts;
 
 import org.springframework.stereotype.Service;
@@ -33,6 +38,13 @@ public class PostsService {
         return id;
     }
 
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+            .map(PostsListResponseDto::new)
+            .collect(Collectors.toList());
+    }
+
     public PostsResponseDto findById (Long id) {
         Posts entity = postsRepository.findById(id)
         .orElseThrow(() -> new IllegalArgumentException(new StringBuilder()
@@ -41,5 +53,4 @@ public class PostsService {
         
         return new PostsResponseDto(entity);
     }
-
 }
