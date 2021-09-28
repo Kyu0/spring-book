@@ -6,9 +6,13 @@ import lombok.RequiredArgsConstructor;
 
 import com.kyu0.springbook.web.dto.PostsSaveRequestDto;
 import com.kyu0.springbook.web.dto.PostsUpdateRequestDto;
+
+import java.util.concurrent.atomic.LongAccumulator;
+
 import com.kyu0.springbook.service.posts.PostsService;
 import com.kyu0.springbook.web.dto.PostsResponseDto;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +33,12 @@ public class PostsApiController {
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
     
     @GetMapping("/api/v1/posts/{id}")
