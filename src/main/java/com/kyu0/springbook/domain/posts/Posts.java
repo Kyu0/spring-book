@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.kyu0.springbook.domain.BaseTiemEntity;
+import com.kyu0.springbook.domain.BaseTimeEntity;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts extends BaseTiemEntity {
+public class Posts extends BaseTimeEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
