@@ -7,8 +7,6 @@ import lombok.RequiredArgsConstructor;
 import com.kyu0.springbook.web.dto.PostsSaveRequestDto;
 import com.kyu0.springbook.web.dto.PostsUpdateRequestDto;
 
-import java.util.concurrent.atomic.LongAccumulator;
-
 import com.kyu0.springbook.service.posts.PostsService;
 import com.kyu0.springbook.web.dto.PostsResponseDto;
 

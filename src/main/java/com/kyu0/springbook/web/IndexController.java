@@ -1,5 +1,8 @@
 package com.kyu0.springbook.web;
 
+import javax.servlet.http.HttpSession;
+
+import com.kyu0.springbook.config.auth.dto.SessionUser;
 import com.kyu0.springbook.service.posts.PostsService;
 import com.kyu0.springbook.web.dto.PostsResponseDto;
 
@@ -15,10 +18,18 @@ import lombok.RequiredArgsConstructor;
 public class IndexController {
     
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
         return "index";
     }
 
